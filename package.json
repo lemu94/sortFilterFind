@@ -1,14 +1,14 @@
 {
-  "name": "sort-filter-find",
-  "version": "0.0.0",
+  "name": "sortfilterfind",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "compodoc": "npx compodoc -p tsconfig.json && git add . && git commit -m 'Mise à jour de la documentation' && git push",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^17.3.0",
     "@angular/common": "^17.3.0",
@@ -26,6 +26,7 @@
     "@angular-devkit/build-angular": "^17.3.10",
     "@angular/cli": "^17.3.5",
     "@angular/compiler-cli": "^17.3.0",
+    "@compodoc/compodoc": "^1.1.26",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.1.0",
     "jsdoc": "^4.0.4",
@@ -36,5 +37,28 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^17.3.0",
     "typescript": "~5.4.2"
-  }
+  },
+  "description": "librairie pour faciliter les operations sur tout type de tableau",
+  "main": "index.d.ts",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lemu94/sortFilterFind.git"
+  },
+  "keywords": [
+    "filter",
+    "array",
+    "find",
+    "sort",
+    "ts",
+    "generique"
+  ],
+  "author": "lemuel yokoi",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/lemu94/sortFilterFind/issues"
+  },
+  "homepage": "https://github.com/lemu94/sortFilterFind#readme"
 }

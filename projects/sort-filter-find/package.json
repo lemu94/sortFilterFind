@@ -10,6 +10,7 @@
   },
 "scripts": {
     "docs": "jsdoc -c jsdoc.json",
+    "compodoc": "npx compodoc -p tsconfig.json",
     "build": "ng-packagr -p ng-package.json && npm run docs"
 },
   "sideEffects": false
