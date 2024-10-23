@@ -7,9 +7,9 @@ export declare class SortFilterFind<T> {
         fieldName: keyof T,
         value: string | number | boolean 
     );
-    sort(): this;
+    sort():  this | undefined;
   
-    filter(): this;
+    filter(): this | undefined;
   
-    find(): this;
+    find(): this | undefined;
   }

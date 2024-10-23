@@ -31,57 +31,51 @@ export class SortFilterFind<T extends ModelT> {
   }
   /**
    * sort : classe par ordre croissant ou decroissant
-   * @returns T[]
+   * @returns T[] | undefined
    */
-  sort() : this{ 
-      if(this.typeSort==="ASC")
-      {
-          this.data.sort((a,b)=> {
+  sort() : this | undefined{ 
 
-              if (typeof a[this.fieldName] === 'string' && typeof b[this.fieldName] === 'string') {
-                  return (a[this.fieldName] as string).localeCompare(b[this.fieldName] as string);
-              }
-              
-              if (typeof a[this.fieldName] === 'number' && typeof b[this.fieldName] === 'number') {
-                  return  (a[this.fieldName] as number) - (b[this.fieldName] as number);
-              }
-              return 0;
-  
-          } )
+    if (!Array.isArray(this.data) || this.data.length === 0) {
+        return undefined; 
       }
-
-      if(this.typeSort==="DESC")
-          {
-              this.data.sort((a,b)=> {
   
-                  if (typeof a[this.fieldName] === 'string' && typeof b[this.fieldName] === 'string') {
-                      return (b[this.fieldName] as string).localeCompare(a[this.fieldName] as string);
-                  }
-                  
-                  if (typeof a[this.fieldName] === 'number' && typeof b[this.fieldName] === 'number') {
-                      return  (b[this.fieldName] as number) - (a[this.fieldName] as number);
-                  }
-                  return 0;
-      
-              } )
-          }
+      const sortFactor = this.typeSort === "ASC" ? 1 : -1;
+  
+      this.data.sort((a, b) => {
+        if (typeof a[this.fieldName] === "string" && typeof b[this.fieldName] === "string") {
+          return sortFactor * (a[this.fieldName] as string).localeCompare(b[this.fieldName] as string);
+        }
+  
+        if (typeof a[this.fieldName] === "number" && typeof b[this.fieldName] === "number") {
+          return sortFactor * ((a[this.fieldName] as number) - (b[this.fieldName] as number));
+        }
+  
+        return 0;
+      });
+  
       return this;
   }
 
   /**
    * filter : filtre generique
-   * @returns T[]
+   * @returns T[] | undefined
    */
-  filter() : this
+  filter() : this | undefined
   {
+    if (!Array.isArray(this.data) || this.data.length === 0) {
+        return undefined;
+      }
       this.data = this.data.filter((element) => element[this.fieldName] === this.value);
       return this;
   }
   /**
    * find : recupere l'Objet T
-   * @returns T | null
+   * @returns T | undefined | null
    */
-  find() : this{
+  find() : this | undefined{
+    if (!Array.isArray(this.data) || this.data.length === 0) {
+        return undefined;
+      }
       this.oneData = this.data.find((element)=> element[this.fieldName] === this.value) ?? null;
       this.data=[];
       return this;
