@@ -83,20 +83,44 @@
                    <div class="content-data">
 
 <h1>SortFilterFind</h1>
-<p>This project was generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a> version 17.3.5.</p>
-<h2>Development server</h2>
-<p>Run <code>ng serve</code> for a dev server. Navigate to <code>http://localhost:4200/</code>. The application will automatically reload if you change any of the source files.</p>
-<h2>Code scaffolding</h2>
-<p>Run <code>ng generate component component-name</code> to generate a new component. You can also use <code>ng generate directive|pipe|service|class|guard|interface|enum|module</code>.</p>
-<h2>Build</h2>
-<p>Run <code>ng build</code> to build the project. The build artifacts will be stored in the <code>dist/</code> directory.</p>
-<h2>Running unit tests</h2>
-<p>Run <code>ng test</code> to execute the unit tests via <a href="https://karma-runner.github.io">Karma</a>.</p>
-<h2>Running end-to-end tests</h2>
-<p>Run <code>ng e2e</code> to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.</p>
-<h2>Further help</h2>
-<p>To get more help on the Angular CLI use <code>ng help</code> or go check out the <a href="https://angular.io/cli">Angular CLI Overview and Command Reference</a> page.</p>
+<p>This library was generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a> version 17.3.0.</p>
+<h2>Description</h2>
+<p>Cette librairie sert a effectuer les operations  : filter / find / sort sur les Array</p>
+<h2>Installation</h2>
+<p>npm i sortfilterfind </p>
+<h2>Example Usage in Angular</h2>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">import { Component } from &#39;&#64;angular/core&#39;;
+import { RouterOutlet } from &#39;&#64;angular/router&#39;;
 
+import { SortFilterFind } from &#39;sort-filter-find&#39;;
+
+interface Person {
+  nom: string;
+  age: number;
+}
+
+&#64;Component({
+  selector: &#39;app-root&#39;,
+  standalone: true,
+  imports: [RouterOutlet],
+  templateUrl: &#39;./app.component.html&#39;,
+  styleUrl: &#39;./app.component.css&#39;
+})
+export class AppComponent {
+  title = &#39;appTest&#39;;
+  liste_personne: Array&lt;Person&gt; = [
+    { nom: &#39;lemuel&#39;, age: 14 },
+    { nom: &#39;ange&#39;, age: 15 }
+  ];
+
+  constructor() {
+    const result = new SortFilterFind(this.liste_personne, &#39;ASC&#39;, &#39;age&#39;, 15)
+      .sort()
+      .filter();
+  }
+}
+
+</code></pre></div>
 
 
 
