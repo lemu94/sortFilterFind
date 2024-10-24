@@ -1,13 +1,10 @@
 type sortType ="ASC"| "DESC";
-class ModelT{
-    constructor(){}
-    [key: string]: unknown
-}
+
 /**
  * classe pour effectuer des operations simples sur les array : Sort / Find / Filter
  */
 
-export class SortFilterFind<T extends ModelT> {
+export class SortFilterFind<T> {
   private data : Array<T>=[];
   private oneData : T | null = null;
   private typeSort : sortType="ASC";

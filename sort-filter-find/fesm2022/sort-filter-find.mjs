@@ -1,6 +1,3 @@
-class ModelT {
-    constructor() { }
-}
 /**
  * classe pour effectuer des operations simples sur les array : Sort / Find / Filter
  */

@@ -1,12 +1,8 @@
 type sortType = "ASC" | "DESC";
-declare class ModelT {
-    constructor();
-    [key: string]: unknown;
-}
 /**
  * classe pour effectuer des operations simples sur les array : Sort / Find / Filter
  */
-export declare class SortFilterFind<T extends ModelT> {
+export declare class SortFilterFind<T> {
     private data;
     private oneData;
     private typeSort;
