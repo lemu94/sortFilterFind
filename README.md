@@ -4,7 +4,7 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Description
 
-Cette librairie sert a effectuer les operations  : filter / find / sort sur les Array
+Class to perform simple operations on arrays of objects: Sort / Find / Filter.  
 
 ## Installation
 

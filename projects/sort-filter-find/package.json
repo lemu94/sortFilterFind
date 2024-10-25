@@ -5,6 +5,7 @@
     "@angular/common": "^17.3.0",
     "@angular/core": "^17.3.0"
   },
+  "typings": "src/lib/sort-filter-find.d.ts",
   "dependencies": {
     "tslib": "^2.3.0"
   },

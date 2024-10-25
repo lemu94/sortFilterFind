@@ -1,6 +1,6 @@
 {
   "name": "sortfilterfind",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -38,7 +38,7 @@
     "ng-packagr": "^17.3.0",
     "typescript": "~5.4.2"
   },
-  "description": "librairie pour faciliter les operations sur tout type de tableau",
+  "description": "Class to perform simple operations on arrays of objects: Sort / Find / Filter",
   "main": "index.d.ts",
   "directories": {
     "doc": "docs"
@@ -59,7 +59,7 @@
     "generique"
   ],
   "author": "lemuel yokoi",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/lemu94/sortFilterFind/issues"
   },
